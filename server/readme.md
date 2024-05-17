@@ -7,13 +7,13 @@ Bem-vindo à API de Cotação de Preços com o Chat GPT-3.5 Turbo! Esta API util
 1. Clone este repositório em sua máquina local.
 
    ```bash
-   git clone https://github.com/RODRIGO20031112/GOOGLE-SHOPPING-SCRAPED-PRICE-QUOTES-API-WITH-SELENIUM-SP4.git
+   git clone https://github.com/RODRIGO20031112/SPRINT-4.git
    ```
 
 2. Certifique que o ambiente virtual está em execução
 
    ```bash
-   cd GOOGLE-SHOPPING-SCRAPED-PRICE-QUOTES-API-WITH-SELENIUM-SP4/Scripts
+   cd server/env/Scripts
 
    ./activate
    ```
@@ -21,11 +21,9 @@ Bem-vindo à API de Cotação de Preços com o Chat GPT-3.5 Turbo! Esta API util
 3. Volte uma pasta e instale as dependências
 
    ```
-   cd ..
+   cd ../Principal
 
    pip install -r requiments.txt
-
-   cd GOOGLE-SHOPPING-SCRAPED-PRICE-QUOTES-API-WITH-SELENIUM-SP4/Principal
    ```
 
 4. Crie um arquivo `.env` no mesmo diretório do código Python (main.py) com a seguinte estrutura:
@@ -42,7 +40,13 @@ Bem-vindo à API de Cotação de Preços com o Chat GPT-3.5 Turbo! Esta API util
    python main.py
    ```
 
-6. **Você pode alterar o código descomentando algumas linhas para ele rodar normalmente em sua máquina ou se preferir pode disparar uma requisição para http://127.0.0.1:5000/api/processNaturalLanguage/LowestPrice, lembrese-se que essa requisição é do tipo POST e espera um corpo que é:**
+6. Siga para a url abaixo para virtualizar este servidor em app mobile ou acesse o app via terminal:
+
+   ```bash
+   https://github.com/RODRIGO20031112/SPRINT-4/tree/main/mobile
+   ```
+
+7. **Você pode alterar o código descomentando algumas linhas para ele rodar normalmente em sua máquina ou se preferir pode disparar uma requisição para http://127.0.0.1:5000/api/processNaturalLanguage/LowestPrice, lembrese-se que essa requisição é do tipo POST e espera um corpo que é:**
 
    ```bash
    {
@@ -51,7 +55,7 @@ Bem-vindo à API de Cotação de Preços com o Chat GPT-3.5 Turbo! Esta API util
    }
    ```
 
-7. **Se necessário, crie outra conta na OpenAI e obtenha uma nova chave de API, caso receba uma mensagem indicando que a cota foi excedida.**
+8. **Se necessário, crie outra conta na OpenAI e obtenha uma nova chave de API, caso receba uma mensagem indicando que a cota foi excedida.**
 
 ## Observações
 
