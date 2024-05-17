@@ -1,0 +1,32 @@
+FROM ubuntu:latest
+
+# Instala dependências
+RUN apt-get update -y && apt-get install -y \
+    wget \
+    unzip \
+    gnupg \
+    ca-certificates \
+    apt-transport-https \
+    software-properties-common \
+    python3-pip \
+    python3-dev
+
+# Instala o Chrome
+RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+RUN apt-get update -y
+RUN apt-get install -y google-chrome-stable
+
+# Baixa e instala o ChromeDriver
+RUN CHROMEDRIVER_VERSION=$(wget -q -O - https://chromedriver.storage.googleapis.com/LATEST_RELEASE) && \
+    wget -N https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip -P /tmp/ && \
+    unzip /tmp/chromedriver_linux64.zip -d /usr/bin/
+
+WORKDIR /app
+
+COPY Principal /app
+COPY Principal/requirements.txt /app/requirements.txt
+
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+CMD ["python3", "main.py"]
